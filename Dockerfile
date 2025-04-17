@@ -57,6 +57,6 @@ COPY run_demos.sh .
 COPY run_benchmarks.sh .
 COPY run_docker_cmd.sh .
 COPY examples/ examples/
-COPY examples/tile/imgs/ examples/tile/imgs/
+COPY examples/tile/imgs/orig.png examples/tile/imgs/orig.png
 
 CMD ["./run_docker_cmd.sh"]
