@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.3/
+
 cd /app/taichi
 python3 setup.py develop
 
@@ -17,5 +19,8 @@ cd /app/examples/tile
 python3 demo_taichi.py
 
 cd /app/examples/rwkv
-python3 benchmark.py
+python3 benchmark.py kernel_v3
+python3 benchmark.py kernel_v2
+python3 benchmark.py kernel_v1
+python3 benchmark.py kernel_v0
 

@@ -54,5 +54,6 @@ RUN git clone --recursive https://github.com/taichi-dev/taichi
 COPY run_examples.sh .
 COPY run_docker_cmd.sh .
 COPY examples/ examples/
+COPY examples/tile/imgs/ examples/tile/imgs/
 
 CMD ["./run_docker_cmd.sh"]

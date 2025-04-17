@@ -11,8 +11,24 @@ torch.backends.cuda.matmul.allow_tf32 = False
 import time
 import taichi as ti
 
-# Change this to use different optimized versions
-from kernel_v0 import timex_taichi_forward, timex_taichi_backward
+# Select the otimized version
+import argparse
+parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument("kernel_version", help="Version of kernel to benchmark [kernel_v0 | kernel_v1 | kernel_v2 | kernel_v3]")
+args = parser.parse_args()
+kernel_version = args.kernel_version
+if kernel_version == "kernel_v0":
+    from kernel_v0 import timex_taichi_forward, timex_taichi_backward
+elif kernel_version == "kernel_v1":
+    from kernel_v1 import timex_taichi_forward, timex_taichi_backward
+elif kernel_version == "kernel_v2":
+    from kernel_v2 import timex_taichi_forward, timex_taichi_backward
+elif kernel_version == "kernel_v3":
+    from kernel_v3 import timex_taichi_forward, timex_taichi_backward
+else:
+    import sys
+    print(f"Invalid kernel version: {kernel_version}.\n Kernel version can only be [kernel_v0 | kernel_v1 | kernel_v2 | kernel_v3]",file=sys.stderr)
+    sys.exit(1)
 
 def set_seed(seed):
     np.random.seed(seed)
