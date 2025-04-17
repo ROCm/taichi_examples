@@ -51,7 +51,10 @@ ENV  TAICHI_CMAKE_ARGS="-DTI_WITH_VULKAN=OFF -DTI_WITH_OPENGL=OFF -DTI_BUILD_TES
 
 RUN git clone --recursive https://github.com/taichi-dev/taichi 
 
-COPY run_examples.sh .
+COPY build_taichi.sh .
+COPY run_small_examples.sh .
+COPY run_demos.sh .
+COPY run_benchmarks.sh .
 COPY run_docker_cmd.sh .
 COPY examples/ examples/
 COPY examples/tile/imgs/ examples/tile/imgs/
