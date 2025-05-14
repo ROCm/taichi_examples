@@ -54,6 +54,7 @@ RUN git clone --recursive https://github.com/taichi-dev/taichi
 COPY build_taichi.sh .
 COPY run_small_examples.sh .
 COPY run_demos.sh .
+COPY run_algorithm_graph_examples.sh .
 COPY run_docker_cmd.sh .
 COPY examples/ examples/
 

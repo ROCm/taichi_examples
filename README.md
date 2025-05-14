@@ -1,7 +1,7 @@
 # Taichi Examples on AMD GPUs
 
 
-This repo contains Taichi examples in the [Taichi documentation](https://docs.taichi-lang.org/) under "Get Started". 
+This repo contains select Taichi examples from the [Taichi documentation](https://docs.taichi-lang.org/) under "Get Started" and the [Taichi Github](https://github.com/taichi-dev/taichi/tree/master/python/taichi/examples). 
 These examples are configured to execute on AMD GPUs (MI2xx and earlier) in the docker image built with the Dockerfile that is provided. 
 There are three categories of examples found in this repo: small examples, Taichi demo examples, and Taichi benchmark examples.
 
@@ -35,5 +35,5 @@ cd /app
 
 **Run Taichi benchmark examples:**
 ```
-./run_benchmarks.sh
+./run_algorithm_graph_examples.sh
 ```
