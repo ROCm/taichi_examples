@@ -17,18 +17,7 @@ docker build -t taichi_examples:latest .
 docker run -it --privileged --network=host --device=/dev/kfd --device=/dev/dri --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --ipc=host --name taichi_examples taichi_examples:latest
 ```
 
-**In Docker container, build taichi application:**
-```
-cd /app
-./build_taichi.sh
-```
-
-**Run Taichi small examples:**
-```
-./run_small_examples.sh
-```
-
-**Run Taichi demo examples:**
+**In Docker container, Run Taichi demo examples:**
 ```
 ./run_demos.sh
 ```

@@ -7,6 +7,3 @@ cd /app/examples/algorithms
 python3 laplace.py
 python3 poisson_disk_sampling.py
 
-cd /app
-
-
