@@ -3,7 +3,7 @@ import numpy as np
 
 ti.init(arch=ti.gpu)
 
-benchmark = True
+benchmark = False
 
 N = 15000
 
