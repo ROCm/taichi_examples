@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo apt update
+sudo apt install ffmpeg
+
 cd examples
 python3 lcs.py
 python3 count_primes.py  

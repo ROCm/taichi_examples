@@ -21,14 +21,22 @@ def paint(t: float):
             iterations += 1
         pixels[i, j] = 1 - iterations * 0.02
 
-#gui = ti.GUI("Julia Set", res=(n * 2, n))
-gui = ti.GUI(show_gui=False)
+result_dir = "./taichi_demo_results"
+video_manager = ti.tools.VideoManager(output_dir=result_dir, framerate=24, automatic_build=False)
 
-#i = 0
-#while gui.running:
-iterations=100
-for i in range(iterations):
+frames = 200
+
+i = 0
+for f in range(frames):
     paint(i * 0.03)
-#    gui.set_image(pixels)
-#    gui.show()
-#    i += 1
+
+    pixels_img = pixels.to_numpy()
+    video_manager.write_frame(pixels_img)
+    i += 1
+
+print()
+print('Exporting .mp4 and .gif videos...')
+video_manager.make_video(gif=True, mp4=True)
+print(f'MP4 video is saved to {video_manager.get_output_filename(".mp4")}')
+print(f'GIF video is saved to {video_manager.get_output_filename(".gif")}')
+
